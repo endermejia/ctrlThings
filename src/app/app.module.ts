@@ -8,7 +8,8 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { StatusComponent } from './components/status/status.component';
 import { ControlComponent } from './components/control/control.component';
-import { SettingsComponent } from './components/settings/settings.component'
+import { SettingsComponent } from './components/settings/settings.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component'
 
 registerLocaleData(localeEs);
 
@@ -17,7 +18,8 @@ registerLocaleData(localeEs);
     AppComponent,
     StatusComponent,
     ControlComponent,
-    SettingsComponent
+    SettingsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
