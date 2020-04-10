@@ -1,1 +1,26 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="" style="font-family: Consolas">ctrlThings</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/status">Status</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/control">Control</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/settings">Settings</a>
+      </li>
+      <li class="nav-tex">
+        <a class="nav-link" routerLinkActive="active" routerLink="/about">About</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <a class="btn btn-sm bg-dark btn-lg" href="https://github.com/endermejia" role="button">Login</a>
+    </span>
+  </div>
+</nav>
