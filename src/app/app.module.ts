@@ -9,7 +9,8 @@ import localeEs from '@angular/common/locales/es';
 import { StatusComponent } from './components/status/status.component';
 import { ControlComponent } from './components/control/control.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component'
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component'
 
 registerLocaleData(localeEs);
 
@@ -19,7 +20,8 @@ registerLocaleData(localeEs);
     StatusComponent,
     ControlComponent,
     SettingsComponent,
-    NavbarComponent
+    NavbarComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
