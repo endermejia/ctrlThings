@@ -11,7 +11,8 @@ import { ControlComponent } from './components/control/control.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { FooterComponent } from './components/shared/footer/footer.component'
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { AboutComponent } from './components/about/about.component'
 
 registerLocaleData(localeEs);
 
@@ -23,7 +24,8 @@ registerLocaleData(localeEs);
     SettingsComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
