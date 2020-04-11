@@ -2,4 +2,22 @@
   <h1 class="display-4">Status</h1>
   <p class="lead">Información básica Raspberry</p>
   <hr class="my-4">
+
+  <div class="input-group mb-3">
+    {{message}}
+  </div>
+
+  <div class="input-group mb-3">
+    <!--    <div>Message: </div>-->
+    <input type="text" class="form-control" placeholder="Insert MQTT message"
+           [(ngModel)]="msg" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="unsafePublish()">Send MQTT msg</button>
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <div #msglog>
+  </div>
 </div>
