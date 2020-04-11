@@ -14,11 +14,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { MqttModule, IMqttServiceOptions} from 'ngx-mqtt';
+import {FormsModule} from '@angular/forms';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
-  hostname: 'localhost',
-  port: 9001,
-  path: '/mqtt'
+  hostname: '192.168.0.109',
+  port: 1883,
+  // path: '/devices/raspberry'
+  // path: '/mqtt'
+  path: ''
 }
 
 registerLocaleData(localeEs);
@@ -36,7 +39,9 @@ registerLocaleData(localeEs);
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
+    FormsModule
   ],
   providers: [
     {

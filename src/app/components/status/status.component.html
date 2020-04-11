@@ -2,4 +2,31 @@
   <h1 class="display-4">Status</h1>
   <p class="lead">Información básica Raspberry</p>
   <hr class="my-4">
+
+  <div class="input-group mb-3">
+    <!--    <div>Topic: </div>-->
+    <input type="text" class="form-control" placeholder="Insert topic like /devices/raspberry"
+           [(ngModel)]="topicname" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="subscribeNewTopic()">Subscribe Topic</button>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <!--    <div>Message: </div>-->
+    <input type="text" class="form-control" placeholder="Insert MQTT message"
+           [(ngModel)]="msg" aria-describedby="button-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="sendmsg()">Send MQTT msg</button>
+    </div>
+  </div>
+
+  <button class="btn btn-outline-secondary" role="button" (click)="clear()">Clear Log</button>
+
+  <br/><br/>
+
+  <div #msglog>
+  </div>
+
+
 </div>
