@@ -1,1 +1,14 @@
-<p>control works!</p>
+<div class="jumbotron m-2">
+  <h1 class="display-4">Control</h1>
+  <p class="lead">Información y manejo de sensores</p>
+  <hr class="my-4">
+</div>
+
+<div class="jumbotron m-2">
+  <h1 class="display-4">Información del usuario</h1>
+  <p class="lead">Datos recogidos de Auth0</p>
+  <hr class="my-4">
+  <pre *ngIf="authService.userProfile$ | async as profile">
+<code>{{ profile | json }}</code>
+</pre>
+</div>

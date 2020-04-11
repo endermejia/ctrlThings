@@ -9,18 +9,25 @@
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/status">Status</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="authService.loggedIn" class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/control">Control</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="authService.loggedIn" class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/settings">Settings</a>
       </li>
       <li class="nav-tex">
         <a class="nav-link" routerLinkActive="active" routerLink="/about">About</a>
       </li>
     </ul>
+
     <span class="navbar-text">
-      <a class="btn btn-sm bg-dark btn-lg" href="https://github.com/endermejia" role="button">Login</a>
+      <button *ngIf="!authService.loggedIn" (click)="authService.login()"
+              class="btn btn-sm btn-outline-primary btn-lg" role="button">Login</button>
+      <button *ngIf="authService.loggedIn" (click)="authService.logout()"
+              class="btn btn-sm btn-outline-danger btn-lg" role="button">Logout</button>
+      <img class="rounded-circle ml-2" style="width: 2em"
+           *ngIf="authService.userProfile$ | async as profile"
+           [src]=" profile.picture">
     </span>
   </div>
 </nav>
