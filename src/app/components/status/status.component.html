@@ -4,21 +4,14 @@
   <hr class="my-4">
 
   <div class="input-group mb-3">
-    <div [ngClass]="{'alert alert-primary': message, 'alert alert-danger': !message}" role="alert">
+    <div [ngClass]="{'alert-primary': message, 'alert-danger': !message}" role="alert" class= "alert">
       Last message received: {{message ? message : 'no message received'}}
     </div>
   </div>
   <div class="input-group mb-3">
     <div class="alert alert-primary" role="alert">
-      Listening in topic: {{topicName}}
-    </div>
-  </div>
-
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Insert MQTT message"
-           [(ngModel)]="msg" aria-describedby="button-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" (click)="unsafePublish()">Send MQTT</button>
+      Listening in topic: {{topicCPU}}
     </div>
   </div>
 </div>
+

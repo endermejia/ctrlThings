@@ -11,11 +11,11 @@ import {Subscription} from 'rxjs';
 export class StatusComponent implements OnDestroy {
   private subscription: Subscription;
   message: string;
-  topicName = '/rasp/led';
-  msg: string;
+  topicCPU = '/rasp/cpu';
 
   constructor(private _mqttService: MqttService) {
-    this.subscription = this._mqttService.observe(this.topicName).subscribe((message: IMqttMessage) => {
+    // Subscribe CPU
+    this.subscription = this._mqttService.observe(this.topicCPU).subscribe((message: IMqttMessage) => {
       this.message = message.payload.toString();
       console.log('Received MQTT: ', this.message);
     });
@@ -23,12 +23,5 @@ export class StatusComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
-
-  public unsafePublish(): void {
-    // use unsafe publish for non-ssl websockets
-    console.log('Sent MQTT: ', this.msg);
-    this._mqttService.unsafePublish(this.topicName, this.msg, {qos: 1, retain: true})
-    this.msg = ''
   }
 }
