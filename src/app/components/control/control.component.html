@@ -2,7 +2,37 @@
   <h1 class="display-4">Control</h1>
   <p class="lead">Información y manejo de sensores</p>
   <hr class="my-4">
+
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+    <label class="custom-control-label" for="customSwitch1"
+           (click)="turnOnLED()">
+      Encender/Apagar LED
+    </label>
+  </div>
+
+  <br>
+
+  <div class="input-group mb-3">
+    <div [ngClass]="{'alert-primary': message, 'alert-danger': !message}" role="alert" class="alert">
+      Last message received: {{message ? message : 'no message received'}}
+    </div>
+  </div>
+  <div class="input-group mb-3">
+    <div class="alert alert-primary" role="alert">
+      Listening in topic: {{topicName}}
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Insert MQTT message"
+           [(ngModel)]="msg" aria-describedby="button-addon2" (keyup.enter)="unsafePublish()">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="unsafePublish()">Send MQTT</button>
+    </div>
+  </div>
 </div>
+
 
 <div class="jumbotron m-2">
   <h1 class="display-4">Información del usuario</h1>
