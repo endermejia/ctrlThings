@@ -1,11 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-
+import {FormsModule} from '@angular/forms';
 import {registerLocaleData} from '@angular/common';
 import localeEs from '@angular/common/locales/es';
+
 import {StatusComponent} from './components/status/status.component';
 import {ControlComponent} from './components/control/control.component';
 import {SettingsComponent} from './components/settings/settings.component';
@@ -13,8 +13,9 @@ import {NavbarComponent} from './components/shared/navbar/navbar.component';
 import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 import {FooterComponent} from './components/shared/footer/footer.component';
 import {AboutComponent} from './components/about/about.component';
+
 import {MqttModule, IMqttServiceOptions} from 'ngx-mqtt';
-import {FormsModule} from '@angular/forms';
+import {ChartsModule} from 'ng2-charts';
 
 export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
   hostname: '192.168.0.109',
@@ -38,8 +39,9 @@ registerLocaleData(localeEs);
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
-    FormsModule
+    ChartsModule
   ],
   providers: [
     {

@@ -4,10 +4,9 @@
   <hr class="my-4">
 
   <div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-    <label class="custom-control-label" for="customSwitch1"
-           (click)="turnOnLED()">
-      Encender/Apagar LED
+    <input type="checkbox" class="custom-control-input" id="statusLED" [(ngModel)]="statusLED" (ngModelChange)="controlLED()">
+    <label class="custom-control-label" for="statusLED">
+      Encender/Apagar LED: {{statusLED}}
     </label>
   </div>
 
@@ -20,7 +19,7 @@
   </div>
   <div class="input-group mb-3">
     <div class="alert alert-primary" role="alert">
-      Listening in topic: {{topicName}}
+      Listening in topic: {{topicLED}}
     </div>
   </div>
 

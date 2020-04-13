@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+
 import {AuthGuard} from './services/auth.guard';
 
 import {StatusComponent} from './components/status/status.component';

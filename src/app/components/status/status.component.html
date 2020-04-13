@@ -3,8 +3,26 @@
   <p class="lead">Información básica Raspberry</p>
   <hr class="my-4">
 
+  <div class="flex">
+    <div class="flex-item">
+      <div style="display: block;">
+        <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
   <div class="input-group mb-3">
-    <div [ngClass]="{'alert-primary': message, 'alert-danger': !message}" role="alert" class= "alert">
+    <div [ngClass]="{'alert-primary': message, 'alert-danger': !message}" role="alert" class="alert">
       Last message received: {{message ? message : 'no message received'}}
     </div>
   </div>
@@ -13,5 +31,6 @@
       Listening in topic: {{topicCPU}}
     </div>
   </div>
+
 </div>
 
