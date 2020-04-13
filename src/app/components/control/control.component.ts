@@ -10,6 +10,7 @@ import {AuthService} from '../../services/auth.service';
 export class ControlComponent {
   message: string;
   topicName = '/rasp/led';
+  statusLED: boolean = false;
   msg: string;
 
   constructor(public authService: AuthService, private _mqttService: MqttService) {
@@ -22,15 +23,9 @@ export class ControlComponent {
     this.msg = '';
   }
 
-  public turnOnLED() {
+  public controlLED() {
     // use unsafe publish for non-ssl websockets
-    console.log('Turn on the LED');
-    this._mqttService.unsafePublish(this.topicName, 'true', {qos: 1, retain: true});
-  }
-
-  public turnOffLED() {
-    // use unsafe publish for non-ssl websockets
-    console.log('Turn off the LED');
-    this._mqttService.unsafePublish(this.topicName, 'false', {qos: 1, retain: true});
+    console.log('Turn ' + (this.statusLED ? 'on' : 'off') + ' the LED');
+    this._mqttService.unsafePublish(this.topicName, this.statusLED.toString(), {qos: 1, retain: true});
   }
 }
